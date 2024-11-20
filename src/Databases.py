@@ -74,6 +74,8 @@ class Databases:
         else:
             raise ValueError("No matching category found in the prompt!")
 
-    def close_connections(self):
+    def close_mongo_connection(self):
         self.mongo_conn.close()
+
+    def close_mysql_connection(self):
         self.mysql_conn.close()
