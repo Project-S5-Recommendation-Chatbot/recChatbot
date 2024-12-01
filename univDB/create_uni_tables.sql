@@ -31,9 +31,10 @@ CREATE TABLE Courses (
     hours_cm INT,
     hours_td INT,
     hours_tp INT,
-    hours_std INT,
-    hours_stp INT,
-    description TEXT,
+    hours_ctd INT,
+    hours_ctp INT,
+    hours_tps INT,
+	description JSONB,
 	block_id INT,
     FOREIGN KEY (block_id) REFERENCES Blocks(block_id)
 );
