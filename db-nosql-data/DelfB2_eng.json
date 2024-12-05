@@ -1,0 +1,127 @@
+{
+  "ExamOverview": {
+    "ExamName": "DELF (Diplôme d'Etudes en Langue Française) / DALF (Diplôme Approfondi de Langue Française)",
+    "CertificationAuthority": "French Ministry of Education",
+    "Purpose": "Certifies French language proficiency for non-native speakers.",
+    "Levels": {
+      "DELF": ["A1", "A2", "B1", "B2"],
+      "DALF": ["C1", "C2"]
+    },
+    "LanguagesOffered": "French",
+    "DurationOfValidity": "Unlimited",
+    "Recognition": "Internationally recognized by educational institutions, employers, and governments."
+  },
+  "ExamFormat": {
+    "Sections": {
+      "ListeningComprehension": {
+        "Duration": "Approximately 30 minutes",
+        "Content": [
+          "Comprehension of multiple audio recordings (e.g., interviews, news reports, or debates).",
+          "Recordings are played twice at most.",
+          "Topics are general or related to current events."
+        ],
+        "SkillsAssessed": [
+          "Understanding main ideas and specific details.",
+          "Ability to infer the speaker's intent or opinions."
+        ],
+        "MaximumDurationOfAllRecordings": "15 minutes",
+        "MarkOutOf": 25
+      },
+      "ReadingComprehension": {
+        "Duration": "1 hour",
+        "Content": [
+          "Several written documents, including articles, advertisements, essays, or reports."
+        ],
+        "SkillsAssessed": [
+          "Ability to analyze and interpret different text types.",
+          "Understanding arguments and tone."
+        ],
+        "MarkOutOf": 25
+      },
+      "Writing": {
+        "Duration": "1 hour",
+        "Content": [
+          "Writing tasks involve taking a stand, contributing to a debate, or composing formal letters or reviews."
+        ],
+        "SkillsAssessed": [
+          "Expressing complex ideas with grammatical accuracy.",
+          "Structuring essays logically with cohesive arguments."
+        ],
+        "MarkOutOf": 25
+      },
+      "Speaking": {
+        "Duration": "20 minutes (with 30 minutes of preparation)",
+        "Content": [
+          "Presentation and defense of an opinion based on a short prompt or document."
+        ],
+        "SkillsAssessed": [
+          "Ability to engage in a formal discussion.",
+          "Use of appropriate vocabulary, intonation, and grammar."
+        ],
+        "MarkOutOf": 25
+      }
+    }
+  },
+  "RegistrationDetails": {
+    "RegistrationPeriod": "October 28 to November 15, 2024",
+    "MaximumParticipants": 200,
+    "ExamDates": {
+      "WrittenExam": "November 29, 2024",
+      "OralExam": ["November 30, 2024", "December 1, 2024"]
+    },
+    "PriceForUFAR": "30000 AMD",
+    "PaymentInstructions": {
+      "Bank": "AKBA BANK JSC",
+      "Recipient": "French Institute of Armenia",
+      "AccountNumber": "220415260078000",
+      "EmailForReceipt": "exams@institutfrancais.am"
+    }
+  },
+  "Preparation": {
+    "ListeningPractice": [
+      "Regularly listen to French audio content such as podcasts, news, and songs to get accustomed to various accents and speeds.",
+      "Use practice tests to familiarize yourself with the format of the listening comprehension."
+    ],
+    "ReadingPractice": [
+      "Read a variety of texts in French, including articles, books, and essays, to improve reading comprehension.",
+      "Focus on identifying main ideas, details, and overall meaning from different types of written material."
+    ],
+    "WritingPractice": [
+      "Write regularly on various topics such as debates, formal letters, and book/film reviews to refine your writing skills.",
+      "Practice structuring your essays clearly, with an introduction, body, and conclusion."
+    ],
+    "SpeakingPractice": [
+      "Engage in conversations with native speakers or practice speaking aloud on different topics.",
+      "Prepare for the speaking exam by using prompts to formulate opinions and defend them with supporting arguments."
+    ]
+  },
+  "Grammar": [
+    "Verbs + subjunctive or indicative",
+    "Conjunctions + subjunctive or indicative",
+    "Impersonal forms (it seems that, it is possible that, it could be that...)",
+    "Verbs with prepositions (to think about, to remember, to act on...)",
+    "Complement pronouns Y and EN (used with verbs requiring prepositions)",
+    "Adjectives with prepositions (to be happy about, to trust in, to be ready to...)",
+    "Nouns with prepositions + infinitive (to have the courage to, to be capable of...)",
+    "Complex relative pronouns (to which, of which, with whom, for whom...)"
+  ],
+  "Vocabulary": [
+    "Current events",
+    "Education",
+    "Ecology",
+    "Politics",
+    "Religion",
+    "Culture",
+    "Law and justice",
+    "Economics and the world of work",
+    "Health"
+  ],
+  "Communication": [
+    "Characterizing something: describing a fact or an abstract thought.",
+    "Asking someone to do something: giving instructions, advising.",
+    "Talking about the future: expressing conditions.",
+    "Talking about the past: recounting past events.",
+    "Expressing an opinion: giving your point of view, whether positive or negative, approving or disapproving, making hypotheses, expressing probability.",
+    "Arguing: justifying your opinion, presenting, emphasizing, making concessions."
+  ]
+}
