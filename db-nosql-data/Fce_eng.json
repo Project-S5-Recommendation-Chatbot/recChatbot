@@ -1,0 +1,228 @@
+{
+  "ExamStructure": {
+    "Parts": [
+      {
+        "Name": "Reading and Use of English",
+        "Duration": "75 minutes",
+        "Sections": [
+          {
+            "Part": "1-4",
+            "Focus": "Grammar and Vocabulary",
+            "Tasks": [
+              "Sentence transformations",
+              "Word formation",
+              "Multiple-choice cloze"
+            ]
+          },
+          {
+            "Part": "5-7",
+            "Focus": "Reading Comprehension",
+            "Tasks": [
+              "Multiple-choice questions",
+              "Matching",
+              "Gap-filling based on texts"
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "Writing",
+        "Duration": "80 minutes",
+        "Sections": [
+          {
+            "Part": "1",
+            "Task": "Essay (Compulsory)",
+            "Description": "Write an essay in response to a question with points provided."
+          },
+          {
+            "Part": "2",
+            "Task": "Choice of Task",
+            "Options": ["Letter", "Review", "Article", "Report", "Story"]
+          }
+        ]
+      },
+      {
+        "Name": "Listening",
+        "Duration": "Approximately 40 minutes",
+        "Sections": [
+          {
+            "Part": "1",
+            "Task": "Multiple-choice",
+            "Description": "Listen to short extracts and answer questions."
+          },
+          {
+            "Part": "2",
+            "Task": "Sentence completion",
+            "Description": "Fill in missing information based on a monologue."
+          },
+          {
+            "Part": "3",
+            "Task": "Multiple matching",
+            "Description": "Match speakers to specific questions based on conversations."
+          },
+          {
+            "Part": "4",
+            "Task": "Multiple-choice",
+            "Description": "Listen to an extended recording and answer detailed questions."
+          }
+        ]
+      },
+      {
+        "Name": "Speaking",
+        "Duration": "14 minutes per pair of candidates",
+        "Description": "Conducted in pairs with an examiner.",
+        "Sections": [
+          {"Part": "1", "Task": "General questions about yourself."},
+          {"Part": "2", "Task": "Describe and compare photos."},
+          {
+            "Part": "3",
+            "Task": "Collaborative task",
+            "Description": "Discuss a situation or problem-solving task with your partner."
+          },
+          {
+            "Part": "4",
+            "Task": "Further discussion on Part 3 topics."
+          }
+        ]
+      }
+    ]
+  },
+  "ScoringSystem": {
+    "Weight": "Each section contributes 25% to the final grade.",
+    "Scale": [
+      {"Range": "180-190", "Grade": "A", "Level": "C1 level certification"},
+      {"Range": "173-179", "Grade": "B"},
+      {"Range": "160-172", "Grade": "C", "Level": "Pass, B2 level certification"},
+      {"Range": "140-159", "Grade": "Below B2", "Certification": "B1-level certificate"}
+    ]
+  },
+  "PreparationTips": {
+    "Steps": [
+      {
+        "Step": "Understand the Exam Format",
+        "Details": [
+          "Familiarize yourself with the structure and timing of each section.",
+          "Use official Cambridge practice tests to simulate the exam."
+        ]
+      },
+      {
+        "Step": "Build Vocabulary and Grammar",
+        "Details": [
+          "Practice sentence transformations, word formation, and gap-filling.",
+          "Use resources like the Cambridge English Grammar in Use series.",
+          "Learn collocations, phrasal verbs, and formal vs informal language."
+        ]
+      },
+      {
+        "Step": "Reading Practice",
+        "Details": [
+          "Read a variety of materials: news articles, blogs, reviews, and fiction.",
+          "Practice skimming for general ideas and scanning for details.",
+          "Work on time management to answer questions within the time limit."
+        ]
+      },
+      {
+        "Step": "Writing Practice",
+        "Details": [
+          "Practice essays on topics like technology, environment, education, etc.",
+          "Learn the structure of other formats (letters, reviews, etc.).",
+          "Get feedback on grammar, vocabulary, coherence, and task achievement."
+        ]
+      },
+      {
+        "Step": "Listening Practice",
+        "Details": [
+          "Listen to podcasts, news reports, or audiobooks in English.",
+          "Practice with a range of accents (British, American, Australian, etc.).",
+          "Focus on identifying keywords, ideas, and specific details."
+        ]
+      },
+      {
+        "Step": "Speaking Practice",
+        "Details": [
+          "Practice answering common FCE-style personal questions.",
+          "Work on describing and comparing images concisely and clearly.",
+          "Simulate collaborative discussions with a partner."
+        ]
+      },
+      {
+        "Step": "Use Official Resources",
+        "Details": [
+          "Cambridge English website for past papers and preparation materials.",
+          "Cambridge Practice Test series for FCE."
+        ]
+      }
+    ]
+  },
+  "CommonMistakesToAvoid": [
+    "Poor Time Management: Practice pacing yourself in each section.",
+    "Ignoring Task Requirements: Address all bullet points in writing tasks.",
+    "Neglecting Pronunciation and Fluency: Practice speaking aloud regularly.",
+    "Overlooking Instructions: Read every instruction carefully in all sections."
+  ],
+  "ExamOptionsAndDates": {
+    "AlternativeTests": [
+      {
+        "Exam": "IELTS",
+        "Score": "5.5 to 6.0",
+        "Equivalent": "FCE score 160 to 179 (Level B2)"
+      },
+      {
+        "Exam": "TOEFL",
+        "Score": "8 to 9.5",
+        "Equivalent": "Level B2"
+      }
+    ],
+    "Dates": {
+      "2025": [
+        "Saturday, 1 March",
+        "Friday, 14 March",
+        "Saturday, 12 April",
+        "Saturday, 17 May",
+        "Saturday, 31 May",
+        "Tuesday, 10 June",
+        "Saturday, 14 June",
+        "Thursday, 24 July",
+        "Thursday, 21 August",
+        "Saturday, 4 October",
+        "Saturday, 8 November",
+        "Tuesday, 25 November",
+        "Saturday, 13 December"
+      ],
+      "2026": [
+        "Saturday, 28 February",
+        "Friday, 13 March",
+        "Saturday, 18 April",
+        "Saturday, 16 May",
+        "Saturday, 30 May",
+        "Tuesday, 9 June",
+        "Saturday, 20 June",
+        "Thursday, 30 July",
+        "Thursday, 27 August",
+        "Saturday, 10 October",
+        "Saturday, 7 November",
+        "Tuesday, 24 November",
+        "Saturday, 12 December"
+      ]
+    }
+  },
+  "HelpfulLinks": {
+    "OfficialResources": [
+      {
+        "Name": "Cambridge English Official Website",
+        "Description": "Exam overview, sample papers, and preparation tips.",
+        "Link": "https://www.cambridgeenglish.org/exams-and-tests/first/"
+      },
+      {
+        "Name": "Cambridge English Practice Tests",
+        "Description": "Free practice tests for Reading, Writing, Listening, and Use of English.",
+        "Link": "https://www.cambridgeenglish.org/exams-and-tests/first/preparation/"
+      },
+      {
+        "Name": "Write & Improve (Cambridge Writing Tool)",
+        "Description": "Submit essays and receive instant feedback on grammar, vocabulary, and structure.",
+        "Link": "https://writeandimprove.com/"
+      }
+    ]
+  }
+}
