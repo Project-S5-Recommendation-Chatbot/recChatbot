@@ -1,0 +1,127 @@
+{
+  "ApercuExamen": {
+    "NomExamen": "DELF (Diplôme d'Études en Langue Française) / DALF (Diplôme Approfondi de Langue Française)",
+    "AutoriteCertification": "Ministère de l'Éducation nationale français",
+    "Objectif": "Certifie la maîtrise du français pour les non-francophones.",
+    "Niveaux": {
+      "DELF": ["A1", "A2", "B1", "B2"],
+      "DALF": ["C1", "C2"]
+    },
+    "LanguesProposees": "Français",
+    "DureeValidite": "Illimitée",
+    "Reconnaissance": "Reconnu à l'international par les institutions éducatives, les employeurs et les gouvernements."
+  },
+  "FormatExamen": {
+    "Sections": {
+      "ComprehensionOrale": {
+        "Duree": "Environ 30 minutes",
+        "Contenu": [
+          "Compréhension de plusieurs enregistrements audio (e.g., interviews, reportages, ou débats).",
+          "Les enregistrements sont écoutés au maximum deux fois.",
+          "Sujets généraux ou liés à l'actualité."
+        ],
+        "CompetencesEvaluees": [
+          "Comprendre les idées principales et les détails spécifiques.",
+          "Déduire l'intention ou les opinions du locuteur."
+        ],
+        "DureeMaximaleEnregistrements": "15 minutes",
+        "NoteMaximale": 25
+      },
+      "ComprehensionEcrite": {
+        "Duree": "1 heure",
+        "Contenu": [
+          "Plusieurs documents écrits, y compris des articles, publicités, essais, ou rapports."
+        ],
+        "CompetencesEvaluees": [
+          "Analyser et interpréter différents types de textes.",
+          "Comprendre les arguments et le ton."
+        ],
+        "NoteMaximale": 25
+      },
+      "ProductionEcrite": {
+        "Duree": "1 heure",
+        "Contenu": [
+          "Tâches d'écriture impliquant de prendre position, contribuer à un débat, ou rédiger des lettres formelles ou des critiques."
+        ],
+        "CompetencesEvaluees": [
+          "Exprimer des idées complexes avec précision grammaticale.",
+          "Structurer les textes logiquement avec des arguments cohérents."
+        ],
+        "NoteMaximale": 25
+      },
+      "ProductionOrale": {
+        "Duree": "20 minutes (avec 30 minutes de préparation)",
+        "Contenu": [
+          "Présentation et défense d'une opinion basée sur une courte consigne ou un document."
+        ],
+        "CompetencesEvaluees": [
+          "Participer à une discussion formelle.",
+          "Utiliser un vocabulaire approprié, une intonation correcte et une grammaire précise."
+        ],
+        "NoteMaximale": 25
+      }
+    }
+  },
+  "DetailsInscription": {
+    "PeriodeInscription": "28 octobre au 15 novembre 2024",
+    "ParticipantsMaximaux": 200,
+    "DatesExamen": {
+      "Ecrit": "29 novembre 2024",
+      "Oral": ["30 novembre 2024", "1er décembre 2024"]
+    },
+    "TarifUFAR": "30 000 AMD",
+    "InstructionsPaiement": {
+      "Banque": "AKBA BANK JSC",
+      "Beneficiaire": "Institut français d'Arménie",
+      "NumeroCompte": "220415260078000",
+      "EmailRecu": "exams@institutfrancais.am"
+    }
+  },
+  "Preparation": {
+    "Ecoute": [
+      "Écoutez régulièrement des contenus audio en français tels que des podcasts, des nouvelles et des chansons pour vous habituer à divers accents et vitesses.",
+      "Utilisez des tests pratiques pour vous familiariser avec le format de la compréhension orale."
+    ],
+    "Lecture": [
+      "Lisez une variété de textes en français, y compris des articles, des livres et des essais, pour améliorer votre compréhension écrite.",
+      "Concentrez-vous sur l'identification des idées principales, des détails et du sens global des différents types de textes écrits."
+    ],
+    "Ecriture": [
+      "Rédigez régulièrement sur divers sujets tels que des débats, des lettres formelles et des critiques de livres/films pour affiner vos compétences en écriture.",
+      "Pratiquez la structuration de vos essais clairement, avec une introduction, un corps et une conclusion."
+    ],
+    "Parole": [
+      "Participez à des conversations avec des locuteurs natifs ou pratiquez à voix haute sur différents sujets.",
+      "Préparez-vous à l'épreuve orale en utilisant des consignes pour formuler des opinions et les défendre avec des arguments."
+    ]
+  },
+  "Grammaire": [
+    "Verbes + subjonctif ou indicatif",
+    "Conjonctions + subjonctif ou indicatif",
+    "Formes impersonnelles (il semble que, il est possible que, il se pourrait que...)",
+    "Verbes avec prépositions (penser à, se souvenir de, agir sur...)",
+    "Pronoms Y et EN (utilisés avec les verbes de prépositions)",
+    "Adjectifs avec prépositions (être content de, avoir confiance en, être prêt à...)",
+    "Noms avec prépositions + infinitif (avoir le courage de, être dans la capacité de...)",
+    "Pronoms relatifs complexes (auquel, duquel, avec qui, pour qui...)"
+  ],
+  "Vocabulaire": [
+    "Actualités",
+    "Éducation",
+    "Écologie",
+    "Politique",
+    "Religion",
+    "Culture",
+    "Droit et justice",
+    "Économie et monde du travail",
+    "Santé"
+  ],
+  "Communication": [
+    "Caractériser quelque chose : décrire un fait ou une pensée abstraite.",
+    "Demander à quelqu’un de faire quelque chose : donner des instructions, conseiller.",
+    "Parler du futur : exprimer des conditions.",
+    "Parler du passé : raconter des événements passés.",
+    "Exprimer une opinion : donner son point de vue, approuver ou désapprouver, faire des hypothèses, exprimer une probabilité.",
+    "Argumenter : justifier son point de vue, présenter, insister, faire des concessions."
+  ]
+}
