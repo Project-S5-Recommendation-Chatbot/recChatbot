@@ -1,0 +1,191 @@
+{
+  "Structure de l'examen": {
+    "Description": "L'examen FCE est composé de quatre parties, conçues pour évaluer tous les aspects de vos compétences en anglais:",
+    "Parties": [
+      {
+        "Nom": "Lecture et Usage de l'anglais",
+        "Durée": "75 minutes",
+        "Sections": [
+          {
+            "Nom": "Parties 1 à 4",
+            "Contenu": "Grammaire et vocabulaire (Transformations de phrases, formation de mots, cloze à choix multiples)."
+          },
+          {
+            "Nom": "Parties 5 à 7",
+            "Contenu": "Compréhension écrite (Questions à choix multiples, appariement, et remplissage de lacunes basés sur des textes)."
+          }
+        ]
+      },
+      {
+        "Nom": "Expression écrite",
+        "Durée": "80 minutes",
+        "Sections": [
+          {
+            "Nom": "Partie 1",
+            "Contenu": "Rédaction d'un essai obligatoire en réponse à une question avec des points donnés."
+          },
+          {
+            "Nom": "Partie 2",
+            "Contenu": "Choix de tâches (lettre, critique, article, rapport ou histoire)."
+          }
+        ]
+      },
+      {
+        "Nom": "Compréhension orale",
+        "Durée": "Environ 40 minutes",
+        "Sections": [
+          {
+            "Nom": "Partie 1",
+            "Contenu": "Questions à choix multiples basées sur des extraits audio courts."
+          },
+          {
+            "Nom": "Partie 2",
+            "Contenu": "Complétion de phrases basée sur un monologue."
+          },
+          {
+            "Nom": "Partie 3",
+            "Contenu": "Appariement des locuteurs à des questions spécifiques basées sur des conversations."
+          },
+          {
+            "Nom": "Partie 4",
+            "Contenu": "Questions à choix multiples sur un enregistrement prolongé."
+          }
+        ]
+      },
+      {
+        "Nom": "Expression orale",
+        "Durée": "14 minutes par paire de candidats",
+        "Sections": [
+          {
+            "Nom": "Partie 1",
+            "Contenu": "Questions générales sur vous-même."
+          },
+          {
+            "Nom": "Partie 2",
+            "Contenu": "Décrire et comparer des photos."
+          },
+          {
+            "Nom": "Partie 3",
+            "Contenu": "Tâche collaborative (discuter d'une situation ou résoudre un problème avec votre partenaire)."
+          },
+          {
+            "Nom": "Partie 4",
+            "Contenu": "Discussion approfondie sur les sujets de la Partie 3."
+          }
+        ]
+      }
+    ]
+  },
+  "Système de notation": {
+    "Description": "Chaque section contribue à 25% de la note finale.",
+    "Notation": [
+      {"Intervalle": "180–190", "Grade": "A", "Niveau": "Certification niveau C1"},
+      {"Intervalle": "173–179", "Grade": "B"},
+      {"Intervalle": "160–172", "Grade": "C", "Niveau": "Certification niveau B2"},
+      {"Intervalle": "140–159", "Grade": "En dessous du niveau B2", "Niveau": "Certification niveau B1"}
+    ]
+  },
+  "Conseils de préparation": [
+    {
+      "Conseil": "Comprendre le format de l'examen",
+      "Détails": "Familiarisez-vous avec la structure et le temps alloué pour chaque section. Utilisez les tests pratiques officiels de Cambridge."
+    },
+    {
+      "Conseil": "Renforcer le vocabulaire et la grammaire",
+      "Détails": "Pratiquez les transformations de phrases, la formation de mots et le remplissage de lacunes. Utilisez des ressources comme la série Cambridge English Grammar in Use."
+    },
+    {
+      "Conseil": "Pratique de la lecture",
+      "Détails": "Lisez des matériaux variés (articles, blogs, critiques, fictions) et travaillez sur la gestion du temps."
+    },
+    {
+      "Conseil": "Pratique de l'écriture",
+      "Détails": "Rédigez des essais sur divers sujets et obtenez des retours sur votre grammaire, vocabulaire et cohérence."
+    },
+    {
+      "Conseil": "Pratique de l'écoute",
+      "Détails": "Écoutez des podcasts, des actualités et des livres audio en anglais avec différents accents."
+    },
+    {
+      "Conseil": "Pratique de l'expression orale",
+      "Détails": "Entraînez-vous à répondre à des questions personnelles et à décrire des images. Simulez des discussions collaboratives."
+    },
+    {
+      "Conseil": "Utiliser les ressources officielles",
+      "Détails": "Utilisez les tests pratiques et matériaux de préparation de Cambridge English."
+    }
+  ],
+  "Erreurs courantes à éviter": [
+    "Mauvaise gestion du temps",
+    "Ignorer les exigences des tâches",
+    "Négliger la prononciation et la fluidité",
+    "Négliger de lire les instructions"
+  ],
+  "Options d'examen et dates": {
+    "Description": "Les étudiants peuvent démontrer leur niveau d'anglais avec le FCE ou des tests reconnus équivalents (IELTS, TOEFL).",
+    "AlternativeTests": [
+      {
+        "Exam": "IELTS",
+        "Score": "5.5 to 6.0",
+        "Equivalent": "FCE score 160 to 179 (Level B2)"
+      },
+      {
+        "Exam": "TOEFL",
+        "Score": "8 to 9.5",
+        "Equivalent": "Level B2"
+      }
+    ],
+    "Dates": {
+      "2025": [
+        "Samedi 1er mars",
+        "Vendredi 14 mars",
+        "Samedi 12 avril",
+        "Samedi 17 mai",
+        "Samedi 31 mai",
+        "Mardi 10 juin",
+        "Samedi 14 juin",
+        "Jeudi 24 juillet",
+        "Jeudi 21 août",
+        "Samedi 4 octobre",
+        "Samedi 8 novembre",
+        "Mardi 25 novembre",
+        "Samedi 13 décembre"
+      ],
+      "2026": [
+        "Samedi 28 février",
+        "Vendredi 13 mars",
+        "Samedi 18 avril",
+        "Samedi 16 mai",
+        "Samedi 30 mai",
+        "Mardi 9 juin",
+        "Samedi 20 juin",
+        "Jeudi 30 juillet",
+        "Jeudi 27 août",
+        "Samedi 10 octobre",
+        "Samedi 7 novembre",
+        "Mardi 24 novembre",
+        "Samedi 12 décembre"
+      ]
+    }
+
+  },
+  "LiensUtiles": {
+  "RessourcesOfficielles": [
+    {
+      "Nom": "Site Officiel de Cambridge English",
+      "Description": "Aperçu de l'examen, exemples de sujets et conseils de préparation.",
+      "Lien": "https://www.cambridgeenglish.org/exams-and-tests/first/"
+    },
+    {
+      "Nom": "Tests de Pratique Cambridge English",
+      "Description": "Tests de pratique gratuits pour la lecture, l'écriture, l'écoute et l'usage de l'anglais.",
+      "Lien": "https://www.cambridgeenglish.org/exams-and-tests/first/preparation/"
+    },
+    {
+      "Nom": "Write & Improve (Outil de Rédaction de Cambridge)",
+      "Description": "Soumettez des essais et recevez un retour instantané sur la grammaire, le vocabulaire et la structure.",
+      "Lien": "https://writeandimprove.com/"
+    }
+  ]
+}
+}
