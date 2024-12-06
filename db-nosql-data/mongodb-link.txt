@@ -1,0 +1,4 @@
+## Database Configuration
+The project uses MongoDB for NoSQL data.
+
+MongoDB Link: mongodb+srv://i21barseghyanlilit:<db_password>@cluster0.1gxmk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
