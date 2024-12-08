@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <img src="images/logo1.png" alt="UFAR Logo" class="ufar-logo"> <!-- Logo added here -->
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <div class="container">
+        <h1>Chat with our Recommendation Bot</h1>
+        <p>Type your interests or preferences below to receive personalized suggestions.</p>
+
+        <div id="chatbox">
+            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
+        </div>
+
+        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
+        <button id="sendButton">Send</button>
+    </div>
+
+    <footer>
+        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
+    </footer>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const userMessage = document.getElementById('userInput').value;
+            if (userMessage.trim() === '') {
+                alert('Please enter a message!');
+                return;
+            }
+
+            // Add user message to chatbox
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('message', 'user-message');
+            userMessageDiv.innerText = userMessage;
+            document.getElementById('chatbox').appendChild(userMessageDiv);
+
+            // Simulate bot response
+            const botResponseDiv = document.createElement('div');
+            botResponseDiv.classList.add('message', 'bot-message');
+            botResponseDiv.innerText = 'Great! Based on your interest, I recommend some resources.';
+            document.getElementById('chatbox').appendChild(botResponseDiv);
+
+            // Clear user input
+            document.getElementById('userInput').value = '';
+
+            // Scroll to the bottom of the chatbox
+            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+        });
+    </script>
+</body>
+</html>
+
