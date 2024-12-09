@@ -71,7 +71,7 @@ def chat():
         user_input = request.json.get('query', '').strip()
         if not user_input:
             return jsonify({'error': 'No input provided'}), 400
-
+        ingest_data(source_directory, persist_directory, embeddings_model_name, chunk_size, chunk_overlap)
         # Pass the query to the chatbot's query handler
         response = query_handler.handle_query(user_input)
         return jsonify({'response': response}), 200
