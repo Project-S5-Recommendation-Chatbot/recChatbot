@@ -223,7 +223,6 @@ We welcome contributions! If you would like to contribute to the development of 
 
 ## **Future Plans**
 
-- **Frontend Development**: A web-based user interface for easier interaction with the chatbot.
 - **Advanced AI Models**: Integration of more advanced AI models for better user experience and deeper context understanding.
 - **Cloud Deployment**: Host the application on a cloud platform (e.g., AWS, Heroku) for scalability.
 - **User Analytics**: Implement analytics to track and improve chatbot performance and user interaction.
