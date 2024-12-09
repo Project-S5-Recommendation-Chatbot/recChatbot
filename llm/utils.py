@@ -1,10 +1,14 @@
-import argparse
+import argparse  # For parsing command-line arguments
 
+# Function to parse command-line arguments
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='privateGPT: Ask questions to your documents without an internet connection, '
-                                                 'using the power of LLMs.')
-    parser.add_argument("--hide-source", "-S", action='store_true',
-                        help='Use this flag to disable printing of source documents used for answers.')
-    parser.add_argument("--mute-stream", "-M", action='store_true',
-                        help='Use this flag to disable the streaming StdOut callback for LLMs.')
-    return parser.parse_args()
+    """
+    Parse command-line arguments.
+    :return: Parsed arguments
+    """
+    parser = argparse.ArgumentParser(description='Command-line interface for querying and managing models.')  # Set up argument parser
+    parser.add_argument("--hide-source", "-S", action='store_true',  # Option to hide source documents
+                        help='Whether to hide source documents in the query results.')
+    parser.add_argument("--mute-stream", "-M", action='store_true',  # Option to mute streaming output
+                        help='Whether to mute streaming of model outputs.')
+    return parser.parse_args()  # Return parsed arguments

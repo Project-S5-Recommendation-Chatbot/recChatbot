@@ -3,7 +3,7 @@ keywords = {
                 "student info", "personal data", "student records", "student details",
                 "academic profile", "enrollment data", "student demographics",
                 "student history", "class information", "course registration",
-                "admissions data", "student contact", "student roster"
+                "admissions data", "student contact", "student roster", "student"
             ],
             "exams": [
                 "certification exam", "test results", "exam data", "exam schedule",
