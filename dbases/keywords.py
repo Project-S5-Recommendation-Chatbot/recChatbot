@@ -1,34 +1,15 @@
 keywords = {
-            "students": [
-                "student info", "personal data", "student records", "student details",
-                "academic profile", "enrollment data", "student demographics",
-                "student history", "class information", "course registration",
-                "admissions data", "student contact", "student roster", "student"
-            ],
-            "exams": [
-                "certification exam", "test results", "exam data", "exam schedule",
-                "exam grades", "test information", "assessment records",
-                "exam preparation", "certification results", "online exam",
-                "test scores", "exam session", "exam eligibility"
-            ],
-            "exchanges": [
-                "exchange program", "foreign study", "international exchange",
-                "student exchange", "study abroad", "foreign university",
-                "international collaboration", "cultural exchange", "global programs",
-                "international student", "overseas education", "foreign academic opportunities"
-            ],
-            "internships": [
-                "job application", "internship opportunity", "career program",
-                "internship application", "internship program", "job placement",
-                "career development", "on-the-job training", "career internships",
-                "industrial training", "apprenticeship", "intern recruitment",
-                "internship offers", "job opportunities", "work-based learning"
-            ],
-            "regulations": [
-                "university regulation", "policies", "academic rules",
-                "university policies", "academic regulations", "code of conduct",
-                "student handbook", "institutional policies", "compliance requirements",
-                "grading policies", "attendance policies", "university guidelines",
-                "academic integrity", "rulebook", "disciplinary policies"
-            ],
-        }
+    "students": ["course", "courses", "lesson", "lessons", "subject", "subjects", "student", "students", "education",
+        "class", "classes", "study", "studies", "enrollment", "attendee", "attendees", "academic", "attendance", ],
+    "exams_regulations": ["regulation", "regulations", "exam regulation", "exam regulations", "test rule", "test rules",
+        "exam policy", "exam policies", "testing procedure", "testing procedures", "assessment rule",
+        "assessment rules", "evaluation guideline", "evaluation guidelines", "exam requirement", "exam requirements"],
+    "interior_regulations": ["interior", "interior regulation", "interior regulations", "internal rule",
+        "internal rules", "company policy", "company policies", "organizational rule", "organizational rules",
+        "office guideline", "office guidelines", "code of conduct", "protocol", "protocols", "workplace regulation",
+        "workplace regulations"],
+    "fce_exam": ["fce", "fce exam", "fce examination", "cambridge english first", "cambridge fce", "fce test",
+        "first certificate in english", "english proficiency test", "b2 exam", "fce preparation", "fce practice"],
+    "delf_exam": ["delf", "delf exam", "delf examination", "diplôme d'études en langue française", "delf test",
+        "french language exam", "french proficiency test", "delf preparation", "delf practice", "delf a1", "delf a2",
+        "delf b1", "delf b2"], }
