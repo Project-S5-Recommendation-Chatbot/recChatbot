@@ -1,6 +1,8 @@
 import os  # For accessing environment variables
+
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler  # For streaming model output to stdout
 from langchain.llms import GPT4All, LlamaCpp  # For loading GPT4All and LlamaCpp models
+
 
 # Class for managing language model (LLM) setup and instantiation
 class LLMManager:
@@ -24,19 +26,38 @@ class LLMManager:
             case "LlamaCpp":
                 return LlamaCpp(
                     model_path=self.model_path,
-                    max_tokens=self.model_n_ctx,
-                    n_batch=self.model_n_batch,
+                    max_tokens=200,  # Reduces verbosity
+                    n_ctx=4096,  # Maintains context window
+                    n_batch=16,  # Balances latency and performance
                     callbacks=self.callbacks,
-                    verbose=False
+                    verbose=True,  # Enables debugging
+                    n_threads=128,  # Matches hardware capabilities
+                    n_gpu_layers=8,  # Optimizes GPU usage
+                    temperature=0.6,  # Encourages determinism
+                    top_p=0.8,  # Balances creativity and focus
+                    repeat_penalty=1.5,  # Discourages repetitive content
+                    presence_penalty=0.8,  # Encourages new ideas
+                    # frequency_penalty=0.6,  # Reduces overused phrases
+                    stop_sequences=[
+                        "\n", "I don't know", "I'm just telling you",
+                        "don't", "note:", "(note:)", "answer", "unhelpful", "i", "useless", "note",
+                        "not-so-helpful", "not", "helpful", "limitation", "limitations", "seems", "please",
+                        "unfortunately", "fortunately", "unfortunately,", "fortunately,", "however", "however,",
+                        "since", "since,", "{", "}", "source", "source,", "source:","Question","question","Question:","question:"
+                    ]
                 )
+
             case "GPT4All":
                 return GPT4All(
                     model=self.model_path,
-                    max_tokens=self.model_n_ctx,
-                    backend='gptj',  # Set GPTJ as the backend for GPT4All
-                    n_batch=self.model_n_batch,
+                    max_tokens=4096,
+                    backend='llama',  # Set GPTJ as the backend for GPT4All
+                    n_batch=8,
                     callbacks=self.callbacks,
-                    verbose=False
+                    verbose=False,
+                    n_threads=8,
+                    n_predict=120,
                 )
             case _:
-                raise ValueError(f"Unsupported model type: {self.model_type}")  # Raise error for unsupported model types
+                raise ValueError(
+                    f"Unsupported model type: {self.model_type}")  # Raise error for unsupported model types

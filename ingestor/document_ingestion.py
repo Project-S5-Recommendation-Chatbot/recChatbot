@@ -1,12 +1,14 @@
 import glob  # For finding files matching a pattern
 import os  # For file and directory operations
-from typing import List  # For type hinting
 from multiprocessing import Pool  # For parallel processing
-from tqdm import tqdm  # For displaying progress bars
+from typing import List  # For type hinting
+
+from langchain.docstore.document import Document  # Document object for further processing
+
+from ingestor.loaders import LOADER_MAPPING  # Mapping of file extensions to loaders
 from ingestor.loaders import load_single_document  # Function to load a single document
 from ingestor.splitter import DocumentSplitter  # For splitting documents into chunks
-from ingestor.loaders import LOADER_MAPPING  # Mapping of file extensions to loaders
-from langchain.docstore.document import Document  # Document object for further processing
+
 
 # Class for ingesting and processing documents from a source directory
 class DocumentIngestion:

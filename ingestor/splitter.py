@@ -1,6 +1,8 @@
-from langchain.text_splitter import RecursiveCharacterTextSplitter  # For splitting text into chunks
-from langchain.docstore.document import Document  # Document object for processing
 from typing import List  # For type hinting
+
+from langchain.docstore.document import Document  # Document object for processing
+from langchain.text_splitter import RecursiveCharacterTextSplitter  # For splitting text into chunks
+
 
 # Class for splitting documents into smaller chunks
 class DocumentSplitter:

@@ -1,8 +1,11 @@
 import os  # For accessing environment variables
+
 import chromadb  # Client for interacting with Chroma database
 from langchain.embeddings import HuggingFaceEmbeddings  # For using HuggingFace embeddings
 from langchain.vectorstores import Chroma  # For interacting with Chroma vector store
+
 from constants import CHROMA_SETTINGS  # Custom Chroma settings from constants file
+
 
 # Class to manage the retriever setup for querying the vector store
 class RetrieverManager:

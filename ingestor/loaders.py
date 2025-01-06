@@ -1,7 +1,11 @@
-import os  # For file operations
 from typing import List  # For type hinting
 from langchain.document_loaders import *  # Import document loaders from langchain
 from langchain.docstore.document import Document  # Document object for further processing
+from typing import List  # For type hinting
+
+from langchain.docstore.document import Document  # Document object for further processing
+from langchain.document_loaders import *  # Import document loaders from langchain
+
 
 # Custom loader for email files, which falls back to loading text/plain content if HTML is not found
 class MyElmLoader(UnstructuredEmailLoader):

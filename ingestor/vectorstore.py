@@ -1,10 +1,9 @@
-import os  # For file and directory operations
 from typing import List  # For type hinting
-from langchain.vectorstores import Chroma  # For using Chroma vector store
 from langchain.embeddings import HuggingFaceEmbeddings  # For embedding documents using HuggingFace model
+from langchain.vectorstores import Chroma  # For using Chroma vector store
+
 from constants import CHROMA_SETTINGS  # Custom Chroma settings from constants file
-import chromadb  # Client for interacting with Chroma database
-from langchain.docstore.document import Document  # Document object for further processing
+
 
 # Class to handle interactions with a Chroma vector store
 class VectorStoreHandler:
