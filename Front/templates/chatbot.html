@@ -14,10 +14,20 @@
             border: none;
             color: white;
             cursor: pointer;
-            width: 100%;
+            width: 150px;
+            border-radius: 50px;
+            text-align: center;
         }
         .scenario-button:hover {
             background-color: rgba(0, 0, 255, 0.7);
+        }
+        .scenario-container {
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -40,10 +50,9 @@
 
         <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
         <button id="sendButton">Send</button>
-        
-        <h3>Scenarios</h3>
-        <div id="scenarios"></div>
     </div>
+
+    <div class="scenario-container" id="scenarios"></div>
 
     <footer>
         &copy; 2024 Recommendation Chatbot. All Rights Reserved.
