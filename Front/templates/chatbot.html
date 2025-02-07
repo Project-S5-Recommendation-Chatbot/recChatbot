@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommendation Chatbot</title>
     <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .scenario-button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0.5);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+        .scenario-button:hover {
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -25,65 +40,74 @@
 
         <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
         <button id="sendButton">Send</button>
+        
+        <h3>Scenarios</h3>
+        <div id="scenarios"></div>
     </div>
 
     <footer>
         &copy; 2024 Recommendation Chatbot. All Rights Reserved.
     </footer>
 
-    <script src="../static/session.js"></script>
     <script>
-        // Check if the user is logged in (optional)
         const user = sessionStorage.getItem('user');
-
         if (user) {
-            // Update the login link to show the user's name
             const loginLink = document.getElementById('loginLink');
             loginLink.textContent = user;
-            loginLink.href = '#';
+            loginLink.removeAttribute('href');
         }
-        loginLink.removeAttribute('href');
 
-        // Predefined responses for testing
         const predefinedResponses = {
-            "hello": "Hi there! How can I assist you today?",
-            "courses": "We offer a variety of courses in Law, Management, Finance, and more. What are you interested in?",
-            "events": "Upcoming events include Career Day and AI Symposium. Would you like more details?",
-            "rules": "UFAR's regulations ensure a great academic environment. What specific rule would you like to know about?",
-            "help": "Sure! You can ask me about courses, events, or university regulations.",
-            "bye": "Goodbye! Have a great day!"
+            "What is the FCE exam about?": "The First Certificate in English (FCE) exam tests a candidate's ability to speak, write, read, listen, and understand English at an upper intermediate level on the Common European Framework of Reference for Languages (CEFRL). It evaluates how well candidates can use English effectively in real-life situations.",
+            "How long is the Listening part of the FCE exam and how many tasks does it involve?": "The listening section of the First Certificate Exam (FCE) lasts for approximately 30 minutes, with a total time limit of 90 minutes per candidate to complete all four parts of the test.",
+            "Provide a course description for the course Functional Programming & Introduction to Abstract Types": "This course covers the characteristics of pure, strongly-typed functional programming.",
+            "Provide information about the courses in second semester in 4th year": "The second semester of the 4th year includes Computer Security, Software Engineering, and Advanced Functional Programming.",
+            "How much is the fee for the 1st semester of the 4th year?": "The fee for the 1st semester of the 4th year at the French University in Armenia is 562500.0 AMD.",
+            "Fournir des informations sur l'examen DELF B2": "Le DELF B2 est un examen certifiant la maîtrise du français pour les non-francophones.",
+            "Comment puis-je m'inscrire à l'examen?": "Pour vous inscrire à l'examen DELF B2, la période d'inscription est du 28 octobre au 15 novembre 2024.",
+            "Tell me about the Undergraduate CS Program": "The Undergraduate Computer Science (CS) Program at UFAR is a four-year program that aims to equip students with knowledge in various computing fields."
         };
 
         document.getElementById('sendButton').addEventListener('click', () => {
-            const userInput = document.getElementById('userInput').value.trim().toLowerCase();
-
+            const userInput = document.getElementById('userInput').value.trim();
             if (!userInput) {
                 alert('Please enter a message!');
                 return;
             }
 
-            // Add the user's message to the chatbox
+            const chatbox = document.getElementById('chatbox');
             const userMessageDiv = document.createElement('div');
             userMessageDiv.classList.add('message', 'user-message');
             userMessageDiv.innerText = userInput;
-            document.getElementById('chatbox').appendChild(userMessageDiv);
+            chatbox.appendChild(userMessageDiv);
 
-            // Clear the input box
             document.getElementById('userInput').value = '';
-
-            // Get predefined response or a default one
             const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
-
-            // Add the bot's response to the chatbox
             const botMessageDiv = document.createElement('div');
             botMessageDiv.classList.add('message', 'bot-message');
             botMessageDiv.innerText = botResponse;
-            document.getElementById('chatbox').appendChild(botMessageDiv);
+            chatbox.appendChild(botMessageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        });
 
-            // Scroll to the latest message
-            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+        document.getElementById('userInput').addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById('sendButton').click();
+            }
+        });
+
+        const scenarios = Object.keys(predefinedResponses);
+        const scenariosContainer = document.getElementById('scenarios');
+        scenarios.forEach((scenario, index) => {
+            const button = document.createElement('button');
+            button.classList.add('scenario-button');
+            button.innerText = `Scenario ${index + 1}`;
+            button.addEventListener('click', () => {
+                document.getElementById('userInput').value = scenario;
+            });
+            scenariosContainer.appendChild(button);
         });
     </script>
-
 </body>
 </html>
