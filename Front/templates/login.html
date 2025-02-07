@@ -31,43 +31,42 @@
 
   <script>
     document.getElementById('loginButton').addEventListener('click', async () => {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const errorMessage = document.getElementById('errorMessage');
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
 
-      errorMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
 
-      if (!username || !password) {
-        errorMessage.textContent = 'Please enter both username and password.';
-        errorMessage.style.display = 'block';
-        return;
-      }
-
-      try {
-        const response = await fetch('http://localhost:5000/login', { // Correct endpoint
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, password })
-        });
-
-        const result = await response.json();
-        console.log('Response:', result);
-
-        if (response.ok) {
-          sessionStorage.setItem('user', username);
-          // Redirect using the HTMLPreview URL for chatbot.html:
-          window.location.href = 'https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/chatbot.html';
-        } else {
-          errorMessage.textContent = result.error || 'Login failed. Please try again.';
-          errorMessage.style.display = 'block';
+        if (!username || !password) {
+            errorMessage.textContent = 'Please enter both username and password.';
+            errorMessage.style.display = 'block';
+            return;
         }
-      } catch (error) {
-        errorMessage.textContent = 'An error occurred. Please try again later.';
-        errorMessage.style.display = 'block';
-        console.error('Error:', error);
-      }
+
+        try {
+            const response = await fetch('http://localhost:5000/login', { // Update with actual backend URL
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ username, password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                sessionStorage.setItem('user', username);
+                window.location.href = 'chatbot.html'; // Redirect to chatbot page
+            } else {
+                errorMessage.textContent = result.error || 'Login failed. Please try again.';
+                errorMessage.style.display = 'block';
+            }
+        } catch (error) {
+            errorMessage.textContent = 'An error occurred. Please try again later.';
+            errorMessage.style.display = 'block';
+            console.error('Error:', error);
+        }
     });
-  </script>
+</script>
+
   <script src="../static/session.js"></script>
 
 </body>
