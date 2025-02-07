@@ -1,40 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recommendation Chatbot</title>
-  <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-  <nav>
-    <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/index.html">Home</a>
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/about.html">About</a>
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/contact.html">Contact</a>
-    <a id="loginLink" href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/login.html">Login</a>
-  </nav>
+    <nav>
+        <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a id="loginLink" href="login.html">Login</a>
+    </nav>
 
-  <div class="container">
-    <h1>Login</h1>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
+    <div class="container">
+        <h1>Chat with our Recommendation Bot</h1>
+        <p>Type your interests or preferences below to receive personalized suggestions.</p>
 
-  <script>
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+        <div id="chatbox">
+            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
+        </div>
 
-      if (username === 'admin' && password === 'admin') {
-        sessionStorage.setItem('user', username);
-        // Redirect using the HTMLPreview URL for index.html:
-        window.location.href = 'https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/index.html';
-      } else {
-        alert('Invalid credentials!');
-      }
-    }
-  </script>
+        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
+        <button id="sendButton">Send</button>
+    </div>
+
+    <footer>
+        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
+    </footer>
+
+    <script src="../static/session.js"></script>
+    <script>
+        // Check if the user is logged in
+        const user = sessionStorage.getItem('user');
+
+        if (!user) {
+            alert('You must log in to access this page.');
+            window.location.href = 'login.html';
+        } else {
+            // Update the login link to show the user's name
+            const loginLink = document.getElementById('loginLink');
+            loginLink.textContent = user;
+            loginLink.href = '#';
+        }
+
+        // Predefined responses for testing
+        const predefinedResponses = {
+            "hello": "Hi there! How can I assist you today?",
+            "courses": "We offer a variety of courses in Law, Management, Finance, and more. What are you interested in?",
+            "events": "Upcoming events include Career Day and AI Symposium. Would you like more details?",
+            "rules": "UFAR's regulations ensure a great academic environment. What specific rule would you like to know about?",
+            "help": "Sure! You can ask me about courses, events, or university regulations.",
+            "bye": "Goodbye! Have a great day!"
+        };
+
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const userInput = document.getElementById('userInput').value.trim().toLowerCase();
+
+            if (!userInput) {
+                alert('Please enter a message!');
+                return;
+            }
+
+            // Add the user's message to the chatbox
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('message', 'user-message');
+            userMessageDiv.innerText = userInput;
+            document.getElementById('chatbox').appendChild(userMessageDiv);
+
+            // Clear the input box
+            document.getElementById('userInput').value = '';
+
+            // Get predefined response or a default one
+            const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
+
+            // Add the bot's response to the chatbox
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('message', 'bot-message');
+            botMessageDiv.innerText = botResponse;
+            document.getElementById('chatbox').appendChild(botMessageDiv);
+
+            // Scroll to the latest message
+            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+        });
+    </script>
+
 </body>
 </html>
