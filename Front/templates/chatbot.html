@@ -1,97 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommendation Chatbot</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommendation Chatbot</title>
+  <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <nav>
-        <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a id="loginLink" href="login.html">Login</a>
-    </nav>
+  <nav>
+    <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
+    <a href="https://htmlpreview.github.io/?https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/index.html">Home</a>
+    <a href="https://htmlpreview.github.io/?https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/about.html">About</a>
+    <a href="https://htmlpreview.github.io/?https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/contact.html">Contact</a>
+    <a id="loginLink" href="https://htmlpreview.github.io/?https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/login.html">Login</a>
+  </nav>
 
-    <div class="container">
-        <h1>Chat with our Recommendation Bot</h1>
-        <p>Type your interests or preferences below to receive personalized suggestions.</p>
+  <div class="container">
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
 
-        <div id="chatbox">
-            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
-        </div>
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
-        <button id="sendButton">Send</button>
-    </div>
-
-    <footer>
-        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
-    </footer>
-
-    <script>
-        src="../static/session.js"
-        // Check if the user is logged in
-        const user = sessionStorage.getItem('user');
-
-        if (!user) {
-            alert('You must log in to access this page.');
-            window.location.href = 'login.html';
-        } else {
-            // Update the login link to show the user's name
-            const loginLink = document.getElementById('loginLink');
-            loginLink.textContent = user;
-            loginLink.href = '#';
-        }
-
-        // Chat functionality remains unchanged
-        document.getElementById('sendButton').addEventListener('click', async () => {
-            const userInput = document.getElementById('userInput').value.trim();
-
-            if (!userInput) {
-                alert('Please enter a message!');
-                return;
-            }
-
-            // Add the user's message to the chatbox
-            const userMessageDiv = document.createElement('div');
-            userMessageDiv.classList.add('message', 'user-message');
-            userMessageDiv.innerText = userInput;
-            document.getElementById('chatbox').appendChild(userMessageDiv);
-
-            // Clear the input box
-            document.getElementById('userInput').value = '';
-
-            // Call the backend API
-            try {
-                const response = await fetch('http://localhost:5000/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ query: userInput }),
-                });
-
-                const data = await response.json();
-
-                // Add the bot's response to the chatbox
-                const botMessageDiv = document.createElement('div');
-                botMessageDiv.classList.add('message', 'bot-message');
-                botMessageDiv.innerText = data.response || 'Sorry, I encountered an issue processing your query.';
-                document.getElementById('chatbox').appendChild(botMessageDiv);
-
-            } catch (error) {
-                console.error('Error:', error);
-                const errorDiv = document.createElement('div');
-                errorDiv.classList.add('message', 'bot-message');
-                errorDiv.innerText = 'Error: Unable to connect to the server.';
-                document.getElementById('chatbox').appendChild(errorDiv);
-            }
-
-            // Scroll to the latest message
-            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
-        });
-    </script>
-
+      if (username === 'admin' && password === 'admin') {
+        sessionStorage.setItem('user', username);
+        // Redirect using the HTMLPreview URL for index.html:
+        window.location.href = 'https://htmlpreview.github.io/?https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/blob/main/index.html';
+      } else {
+        alert('Invalid credentials!');
+      }
+    }
+  </script>
 </body>
 </html>
