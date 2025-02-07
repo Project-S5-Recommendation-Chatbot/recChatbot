@@ -1,164 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recommendation Chatbot</title>
-  <link rel="stylesheet" href="../static/style.css" />
-  <style>
-    /* Container with flex layout: chat area on the left, scenarios on the right */
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin: 20px;
-    }
-
-    /* Chat area styles */
-    .chat-area {
-      flex: 3;
-      margin-right: 20px;
-    }
-    #chatbox {
-      width: 100%;
-      max-height: 400px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      overflow-y: auto;
-      margin-bottom: 10px;
-    }
-    textarea {
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-    button#sendButton {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    /* Scenario container on the right */
-    .scenario-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Round scenario buttons with 50% transparency */
-    .scenario-button {
-      background-color: rgba(0, 0, 255, 0.5);
-      border: none;
-      border-radius: 50px;
-      color: white;
-      padding: 10px 15px;
-      margin: 5px 0;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .scenario-button:hover {
-      background-color: rgba(0, 0, 255, 0.7);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .scenario-button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0.5);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 150px;
+            border-radius: 50px;
+            text-align: center;
+        }
+        .scenario-button:hover {
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+        .scenario-container {
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo" />
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a id="loginLink" href="login.html">Login</a>
-  </nav>
+    <nav>
+        <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a id="loginLink" href="login.html">Login</a>
+    </nav>
 
-  <div class="container">
-    <!-- Chat Area -->
-    <div class="chat-area">
-      <h1>Chat with our Recommendation Bot</h1>
-      <p>Type your interests or preferences below to receive personalized suggestions.</p>
-      <div id="chatbox">
-        <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
-      </div>
-      <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
-      <button id="sendButton">Send</button>
+    <div class="container">
+        <h1>Chat with our Recommendation Bot</h1>
+        <p>Type your interests or preferences below to receive personalized suggestions.</p>
+
+        <div id="chatbox">
+            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
+        </div>
+
+        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
+        <button id="sendButton">Send</button>
     </div>
 
-    <!-- Scenario Buttons -->
-    <div class="scenario-container" id="scenarios">
-      <!-- Buttons will be dynamically added here -->
-    </div>
-  </div>
+    <div class="scenario-container" id="scenarios"></div>
 
-  <footer>
-    &copy; 2024 Recommendation Chatbot. All Rights Reserved.
-  </footer>
+    <footer>
+        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
+    </footer>
 
-  <script>
-    // If the user is logged in, update the login link.
-    const user = sessionStorage.getItem('user');
-    if (user) {
-      const loginLink = document.getElementById('loginLink');
-      loginLink.textContent = user;
-      loginLink.removeAttribute('href');
-    }
+    <script>
+        const user = sessionStorage.getItem('user');
+        if (user) {
+            const loginLink = document.getElementById('loginLink');
+            loginLink.textContent = user;
+            loginLink.removeAttribute('href');
+        }
 
-    // Predefined responses and corresponding input texts
-    const predefinedResponses = {
-      "What is the FCE exam about?": "The First Certificate in English (FCE) exam tests a candidate's ability to speak, write, read, listen, and understand English at an upper intermediate level on the Common European Framework of Reference for Languages (CEFRL). It evaluates how well candidates can use English effectively in real-life situations.",
-      "How long is the Listening part of the FCE exam and how many tasks does it involve?": "The listening section of the First Certificate Exam (FCE) lasts for approximately 30 minutes, with a total time limit of 90 minutes per candidate to complete all four parts of the test.",
-      "Provide a course description for the course Functional Programming & Introduction to Abstract Types": "This course covers the characteristics of pure, strongly-typed functional programming. It includes topics like inductive data structures, filtering and recursion, as well as OCaml modules and signatures.",
-      "Provide information about the courses in second semester in 4th year": "The second semester of the 4th year includes Computer Security, focusing on security principles, risk assessment, cryptography, and access control models, with skills in security assessment and collaboration. Software Engineering covers software development approaches, testing techniques, and processes, emphasizing static/dynamic testing and professional communication in English. Advanced Functional Programming & Abstract Data Type involves functional programming and data structures, with skills in problem-solving and critical thinking. Computer Graphics, Image Processing, and Analysis explores image representation, rendering pipelines, and processing algorithms, with practical skills in ray tracing and signal representation. Signal Processing includes basics like Fourier transform, filtering, and denoising, with professional communication in French. Lastly, French S5 aims to improve comprehension and use of French in IT contexts, focusing on professional writing and achieving B2 proficiency.",
-      "How much is the fee for the 1st semester of the 4th year?": "The fee for the 1st semester of the 4th year at the French University in Armenia is 562500.0 AMD.",
-      "Fournir des informations sur l'examen DELF B2": "Le DELF B2 (Diplôme d'Études en Langue Française) est un examen certifiant la maîtrise du français pour les non-francophones. Il évalue les compétences en compréhension orale, compréhension écrite, production écrite, et production orale. Les candidats doivent démontrer leur capacité à comprendre des enregistrements audio, lire et analyser des textes, rédiger des essais et lettres, et participer à des discussions. L'examen est reconnu internationalement par des institutions éducatives et des employeurs. La préparation inclut l'écoute de contenu en français, la lecture de textes variés, l'écriture régulière, et la pratique de la parole.",
-      "Comment puis-je m'inscrire à l'examen?": "Pour vous inscrire à l'examen DELF B2, la période d'inscription est du 28 octobre au 15 novembre 2024. Vous pouvez vous inscrire à l'Institut français d'Arménie en remplissant les formalités requises. L'examen écrit se déroulera le 29 novembre 2024, et les épreuves orales auront lieu le 30 novembre et le 1er décembre 2024. Le tarif est de 30 000 AMD pour les étudiants de l'UFAR. Le paiement doit être effectué à AKBA BANK JSC sur le compte de l'Institut français d'Arménie (numéro de compte: 220415260078000), et le reçu de paiement doit être envoyé à exams@institutfrancais.am.",
-      "Tell me about the Undergraduate CS Program": "The Undergraduate Computer Science (CS) Program at UFAR is a four-year program that aims to equip students with knowledge, skills, and values in mathematical thinking, problem solving, modeling, scientific computing, programming languages, databases, operating systems, networking, algorithms, data structures, computer architecture, software engineering, artificial intelligence, machine learning, natural language processing, web development, database management system, cloud computing, distributed systems, parallel computing, real-time applications and embedded systems. The program prepares students for careers in applied mathematical and computational fields such as scientific research, industrial automation, aerospace technology, data science, computer networks, software engineering, artificial intelligence, machine learning, natural language processing, web development, database management system, cloud computing, distributed systems, parallel computing, real-time applications, embedded systems. The program also fosters responsible leaders who are committed to their fields and society by developing scientific, engineering, industrial programs that contribute to the advancement of knowledge in these areas."
-    };
+        const predefinedResponses = {
+            "What is the FCE exam about?": "The First Certificate in English (FCE) exam tests a candidate's ability to speak, write, read, listen, and understand English at an upper intermediate level on the Common European Framework of Reference for Languages (CEFRL). It evaluates how well candidates can use English effectively in real-life situations.",
+            "How long is the Listening part of the FCE exam and how many tasks does it involve?": "The listening section of the First Certificate Exam (FCE) lasts for approximately 30 minutes, with a total time limit of 90 minutes per candidate to complete all four parts of the test.",
+            "Provide a course description for the course Functional Programming & Introduction to Abstract Types": "This course covers the characteristics of pure, strongly-typed functional programming.",
+            "Provide information about the courses in second semester in 4th year": "The second semester of the 4th year includes Computer Security, Software Engineering, and Advanced Functional Programming.",
+            "How much is the fee for the 1st semester of the 4th year?": "The fee for the 1st semester of the 4th year at the French University in Armenia is 562500.0 AMD.",
+            "Fournir des informations sur l'examen DELF B2": "Le DELF B2 est un examen certifiant la maîtrise du français pour les non-francophones.",
+            "Comment puis-je m'inscrire à l'examen?": "Pour vous inscrire à l'examen DELF B2, la période d'inscription est du 28 octobre au 15 novembre 2024.",
+            "Tell me about the Undergraduate CS Program": "The Undergraduate Computer Science (CS) Program at UFAR is a four-year program that aims to equip students with knowledge in various computing fields."
+        };
 
-    // Handle sending of messages
-    document.getElementById('sendButton').addEventListener('click', () => {
-      const userInput = document.getElementById('userInput').value.trim();
-      if (!userInput) {
-        alert('Please enter a message!');
-        return;
-      }
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput) {
+                alert('Please enter a message!');
+                return;
+            }
 
-      const chatbox = document.getElementById('chatbox');
-      const userMessageDiv = document.createElement('div');
-      userMessageDiv.classList.add('message', 'user-message');
-      userMessageDiv.innerText = userInput;
-      chatbox.appendChild(userMessageDiv);
+            const chatbox = document.getElementById('chatbox');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('message', 'user-message');
+            userMessageDiv.innerText = userInput;
+            chatbox.appendChild(userMessageDiv);
 
-      document.getElementById('userInput').value = '';
-      const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
-      const botMessageDiv = document.createElement('div');
-      botMessageDiv.classList.add('message', 'bot-message');
-      botMessageDiv.innerText = botResponse;
-      chatbox.appendChild(botMessageDiv);
+            document.getElementById('userInput').value = '';
+            const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('message', 'bot-message');
+            botMessageDiv.innerText = botResponse;
+            chatbox.appendChild(botMessageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        });
 
-      chatbox.scrollTop = chatbox.scrollHeight;
-    });
+        document.getElementById('userInput').addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById('sendButton').click();
+            }
+        });
 
-    // Allow pressing "Enter" (without Shift) to send messages.
-    document.getElementById('userInput').addEventListener('keypress', (event) => {
-      if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        document.getElementById('sendButton').click();
-      }
-    });
-
-    // Create scenario buttons on the right side
-    const scenarios = Object.keys(predefinedResponses);
-    const scenariosContainer = document.getElementById('scenarios');
-    scenarios.forEach((scenario, index) => {
-      const button = document.createElement('button');
-      button.classList.add('scenario-button');
-      button.innerText = `Scenario ${index + 1}`;
-      button.addEventListener('click', () => {
-        document.getElementById('userInput').value = scenario;
-      });
-      scenariosContainer.appendChild(button);
-    });
-  </script>
+        const scenarios = Object.keys(predefinedResponses);
+        const scenariosContainer = document.getElementById('scenarios');
+        scenarios.forEach((scenario, index) => {
+            const button = document.createElement('button');
+            button.classList.add('scenario-button');
+            button.innerText = `Scenario ${index + 1}`;
+            button.addEventListener('click', () => {
+                document.getElementById('userInput').value = scenario;
+            });
+            scenariosContainer.appendChild(button);
+        });
+    </script>
 </body>
 </html>
