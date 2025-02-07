@@ -88,14 +88,16 @@
             border-radius: 5px;
         }
 
-        .scenario-container {
-            position: absolute;
-            right: -100px; /* Moves buttons to the right */
-            top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.scenario-container {
+    position: fixed; /* Fix position to the right edge */
+    right: 20px; /* Push as far right as possible while keeping a small margin */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align buttons to the right */
+}
+
 
         .scenario-button {
             background-color: rgba(0, 0, 255, 0.5);
