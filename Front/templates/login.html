@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+<nav>
+    <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a id="loginLink" href="login.html">Login</a>
+</nav>
 
-    <nav>
-        <img src="https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/static/logo1.png" alt="UFAR Logo" class="ufar-logo">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a id="loginLink" href="login.html">Login</a>
-    </nav>
+<div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="button" id="loginButton">Login</button>
+    </form>
+    <p id="errorMessage" class="error-message" style="color: red; display: none;"></p>
+</div>
 
-    <div class="container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="button" id="loginButton">Login</button>
-        </form>
-    </div>
+<footer>
+    &copy; 2024 Recommendation Chatbot. All Rights Reserved.
+</footer>
 
-    <script src="https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/static/session.js"></script>
+<script>
+    document.getElementById('loginButton').addEventListener('click', () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Hide any previous error messages
+        errorMessage.style.display = 'none';
+
+        // Check if username and password match "petros" and "1234"
+        if (username === 'petros' && password === '1234') {
+            // Store username in sessionStorage and redirect to chatbot.html
+            sessionStorage.setItem('user', username);
+            window.location.href = 'chatbot.html';
+        } else {
+            // Show error message if login fails
+            errorMessage.textContent = 'Invalid username or password!';
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
+<script src="../static/session.js"></script>
+
 </body>
 </html>
