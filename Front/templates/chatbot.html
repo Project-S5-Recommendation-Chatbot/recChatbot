@@ -33,13 +33,10 @@
 
     <script src="../static/session.js"></script>
     <script>
-        // Check if the user is logged in
+        // Check if the user is logged in (optional)
         const user = sessionStorage.getItem('user');
 
-        if (!user) {
-            alert('You must log in to access this page.');
-            window.location.href = 'login.html';
-        } else {
+        if (user) {
             // Update the login link to show the user's name
             const loginLink = document.getElementById('loginLink');
             loginLink.textContent = user;
