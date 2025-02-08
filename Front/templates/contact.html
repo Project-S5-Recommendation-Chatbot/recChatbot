@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-
   <nav>
     <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
     <a href="index.html">Home</a>
@@ -19,7 +18,7 @@
 
   <div class="container">
     <h1>Contact Us</h1>
-
+    
     <section class="contact-info">
       <h2>Admissions and Preparatory Courses Department</h2>
       <p><strong>Phone:</strong> +374 98279672</p>
@@ -32,7 +31,16 @@
       <ul>
         <li><strong>Law:</strong> 098279671, <a href="mailto:ap_droit@ufar.am">ap_droit@ufar.am</a></li>
         <li><strong>Management:</strong> 098279673, <a href="mailto:ap_gestion@ufar.am">ap_gestion@ufar.am</a></li>
+        <li><strong>Finance:</strong> 098279674, <a href="mailto:ap_finances@ufar.am">ap_finances@ufar.am</a></li>
+        <li><strong>Marketing:</strong> 098279674, <a href="mailto:ap_marketing@ufar.am">ap_marketing@ufar.am</a></li>
+        <li><strong>IMA:</strong> 098279676, <a href="mailto:ap_ima@ufar.am">ap_ima@ufar.am</a></li>
       </ul>
+    </section>
+
+    <section class="communication-info">
+      <h2>Communication and Public Relations</h2>
+      <h3>General Inquiries</h3>
+      <p><strong>Phone:</strong> 010249647, <a href="mailto:info@ufar.am">info@ufar.am</a></p>
     </section>
   </div>
 
@@ -46,18 +54,15 @@
     const logoutButton = document.getElementById('logoutButton');
 
     if (user) {
-        loginLink.style.display = 'none';
+        loginLink.textContent = user;
+        loginLink.removeAttribute('href');
         logoutButton.style.display = 'inline-block';
-        logoutButton.textContent = `Logout (${user})`;
     }
 
     logoutButton.addEventListener('click', () => {
         sessionStorage.removeItem('user');
-        location.reload();
+        window.location.reload();
     });
   </script>
-
-  <script src="../static/session.js"></script>
-
 </body>
 </html>
