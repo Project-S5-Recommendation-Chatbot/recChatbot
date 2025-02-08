@@ -42,7 +42,7 @@
         if (username === 'petros' && password === '1234') {
             // Store username in sessionStorage and redirect to chatbot.html
             sessionStorage.setItem('user', username);
-            window.open('https://htmlpreview.github.io/?https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/templates/chatbot.html','_blank');
+            window.location.href = 'https://htmlpreview.github.io/?https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/templates/chatbot.html';
         } else {
             // Show error message if login fails
             errorMessage.textContent = 'Invalid username or password!';
