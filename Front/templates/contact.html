@@ -7,17 +7,19 @@
   <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+
   <nav>
     <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a id="loginLink" href="login.html">Login</a>
+    <button id="logoutButton" style="display: none;">Logout</button>
   </nav>
 
   <div class="container">
     <h1>Contact Us</h1>
-    
+
     <section class="contact-info">
       <h2>Admissions and Preparatory Courses Department</h2>
       <p><strong>Phone:</strong> +374 98279672</p>
@@ -30,9 +32,6 @@
       <ul>
         <li><strong>Law:</strong> 098279671, <a href="mailto:ap_droit@ufar.am">ap_droit@ufar.am</a></li>
         <li><strong>Management:</strong> 098279673, <a href="mailto:ap_gestion@ufar.am">ap_gestion@ufar.am</a></li>
-        <li><strong>Finance:</strong> 098279674, <a href="mailto:ap_finances@ufar.am">ap_finances@ufar.am</a></li>
-        <li><strong>Marketing:</strong> 098279674, <a href="mailto:ap_marketing@ufar.am">ap_marketing@ufar.am</a></li>
-        <li><strong>IMA:</strong> 098279676, <a href="mailto:ap_ima@ufar.am">ap_ima@ufar.am</a></li>
       </ul>
     </section>
   </div>
@@ -43,13 +42,19 @@
 
   <script>
     const user = sessionStorage.getItem('user');
+    const loginLink = document.getElementById('loginLink');
+    const logoutButton = document.getElementById('logoutButton');
+
     if (user) {
-        const loginLink = document.getElementById('loginLink');
-        loginLink.textContent = user;
-        loginLink.removeAttribute('href');
-        loginLink.style.pointerEvents = 'none'; 
-        loginLink.style.opacity = '0.6';  
+        loginLink.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
+        logoutButton.textContent = `Logout (${user})`;
     }
+
+    logoutButton.addEventListener('click', () => {
+        sessionStorage.removeItem('user');
+        location.reload();
+    });
   </script>
 
   <script src="../static/session.js"></script>
