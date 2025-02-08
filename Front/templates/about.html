@@ -14,11 +14,13 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a id="loginLink" href="login.html">Login</a>
+    <button id="logoutButton" style="display: none;">Logout</button>
   </nav>
 
   <div class="container">
     <h1>About the Recommendation Chatbot</h1>
-    <p>This webpage was created by a group of IMA 2024 undergraduate students at UFAR. It is designed to answer all your questions regarding regulations and related topics.</p>
+    <p>This webpage was created by a group of IMA 2024 undergraduate students at UFAR.</p>
+    <p>It is designed to answer all your questions regarding regulations and related topics.</p>
     <p>Our goal is to provide quick and easy access to important information to help you navigate through the university’s rules and regulations.</p>
     <p>Powered by AI, this chatbot offers personalized responses to ensure you get the information you need efficiently and effectively.</p>
     <p>Feel free to explore and ask any questions!</p>
@@ -34,13 +36,19 @@
 
   <script>
     const user = sessionStorage.getItem('user');
+    const loginLink = document.getElementById('loginLink');
+    const logoutButton = document.getElementById('logoutButton');
+
     if (user) {
-        const loginLink = document.getElementById('loginLink');
-        loginLink.textContent = user;
-        loginLink.removeAttribute('href');
-        loginLink.style.pointerEvents = 'none'; 
-        loginLink.style.opacity = '0.6';  
+        loginLink.style.display = 'none';
+        logoutButton.style.display = 'inline-block';
+        logoutButton.textContent = `Logout (${user})`;
     }
+
+    logoutButton.addEventListener('click', () => {
+        sessionStorage.removeItem('user');
+        location.reload();
+    });
   </script>
 
   <script src="../static/session.js"></script>
