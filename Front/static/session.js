@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loginLink.onclick = logout; // Assign logout function
         } else {
             loginLink.textContent = 'Login';
-            loginLink.href = 'login.html';
+            loginLink.href = '#';
             loginLink.onclick = null; // Ensure no logout function is attached
         }
     }
