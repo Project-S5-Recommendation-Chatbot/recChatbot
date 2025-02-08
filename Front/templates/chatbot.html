@@ -1,122 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommendation Chatbot</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <style>
-        .scenario-button {
-            display: block;
-            margin: 5px 0;
-            padding: 10px;
-            background-color: rgba(0, 0, 255, 0.5);
-            border: none;
-            color: white;
-            cursor: pointer;
-            width: 150px;
-            border-radius: 50px;
-            text-align: center;
-        }
-        .scenario-button:hover {
-            background-color: rgba(0, 0, 255, 0.7);
-        }
-        .scenario-container {
-            position: absolute;
-            right: 20px;
-            top: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .scenario-button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0.5);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 150px;
+            border-radius: 50px;
+            text-align: center;
+        }
+        .scenario-button:hover {
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+        .scenario-container {
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a id="loginLink" href="login.html">Login</a>
-    </nav>
+    <nav>
+        <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a id="loginLink" href="login.html">Login</a>
+    </nav>
 
-    <div class="container">
-        <h1>Chat with our Recommendation Bot</h1>
-        <p>Type your interests or preferences below to receive personalized suggestions.</p>
+    <div class="container">
+        <h1>Chat with our Recommendation Bot</h1>
+        <p>Type your interests or preferences below to receive personalized suggestions.</p>
 
-        <div id="chatbox">
-            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
-        </div>
+        <div id="chatbox">
+            <div class="message bot-message">Hello! I am here to help. What are you interested in today?</div>
+        </div>
 
-        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
-        <button id="sendButton">Send</button>
-    </div>
+        <textarea id="userInput" placeholder="Type your message..." rows="4"></textarea>
+        <button id="sendButton">Send</button>
+    </div>
 
-    <div class="scenario-container" id="scenarios"></div>
+    <div class="scenario-container" id="scenarios"></div>
 
-    <footer>
-        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
-    </footer>
+    <footer>
+        &copy; 2024 Recommendation Chatbot. All Rights Reserved.
+    </footer>
 
-    <script>
-        const user = sessionStorage.getItem('user');
-        if (user) {
-            const loginLink = document.getElementById('loginLink');
-            loginLink.textContent = user;
-            loginLink.removeAttribute('href');
-        }
+    <script>
+        const user = sessionStorage.getItem('user');
+        if (user) {
+            const loginLink = document.getElementById('loginLink');
+            loginLink.textContent = user;
+            loginLink.removeAttribute('href');
+        }
 
-        const predefinedResponses = {
-            "What is the FCE exam about?": "The First Certificate in English (FCE) exam tests a candidate's ability to speak, write, read, listen, and understand English at an upper intermediate level on the Common European Framework of Reference for Languages (CEFRL). It evaluates how well candidates can use English effectively in real-life situations.",
-            "How long is the Listening part of the FCE exam and how many tasks does it involve?": "The listening section of the First Certificate Exam (FCE) lasts for approximately 30 minutes, with a total time limit of 90 minutes per candidate to complete all four parts of the test.",
-            "Provide a course description for the course Functional Programming & Introduction to Abstract Types": "This course covers the characteristics of pure, strongly-typed functional programming.",
-            "Provide information about the courses in second semester in 4th year": "The second semester of the 4th year includes Computer Security, Software Engineering, and Advanced Functional Programming.",
-            "How much is the fee for the 1st semester of the 4th year?": "The fee for the 1st semester of the 4th year at the French University in Armenia is 562500.0 AMD.",
-            "Fournir des informations sur l'examen DELF B2": "Le DELF B2 est un examen certifiant la maîtrise du français pour les non-francophones.",
-            "Comment puis-je m'inscrire à l'examen?": "Pour vous inscrire à l'examen DELF B2, la période d'inscription est du 28 octobre au 15 novembre 2024.",
-            "Tell me about the Undergraduate CS Program": "The Undergraduate Computer Science (CS) Program at UFAR is a four-year program that aims to equip students with knowledge in various computing fields."
-        };
+        const predefinedResponses = {
+            "What is the FCE exam about?": "The First Certificate in English (FCE) exam tests a candidate's ability to speak, write, read, listen, and understand English at an upper intermediate level on the Common European Framework of Reference for Languages (CEFRL). It evaluates how well candidates can use English effectively in real-life situations.",
+            "How long is the Listening part of the FCE exam and how many tasks does it involve?": "The listening section of the First Certificate Exam (FCE) lasts for approximately 30 minutes, with a total time limit of 90 minutes per candidate to complete all four parts of the test.",
+            "Provide a course description for the course Functional Programming & Introduction to Abstract Types": "This course covers the characteristics of pure, strongly-typed functional programming.",
+            "Provide information about the courses in second semester in 4th year": "The second semester of the 4th year includes Computer Security, Software Engineering, and Advanced Functional Programming.",
+            "How much is the fee for the 1st semester of the 4th year?": "The fee for the 1st semester of the 4th year at the French University in Armenia is 562500.0 AMD.",
+            "Fournir des informations sur l'examen DELF B2": "Le DELF B2 est un examen certifiant la maîtrise du français pour les non-francophones.",
+            "Comment puis-je m'inscrire à l'examen?": "Pour vous inscrire à l'examen DELF B2, la période d'inscription est du 28 octobre au 15 novembre 2024.",
+            "Tell me about the Undergraduate CS Program": "The Undergraduate Computer Science (CS) Program at UFAR is a four-year program that aims to equip students with knowledge in various computing fields."
+        };
 
-        document.getElementById('sendButton').addEventListener('click', () => {
-            const userInput = document.getElementById('userInput').value.trim();
-            if (!userInput) {
-                alert('Please enter a message!');
-                return;
-            }
+        document.getElementById('sendButton').addEventListener('click', () => {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput) {
+                alert('Please enter a message!');
+                return;
+            }
 
-            const chatbox = document.getElementById('chatbox');
-            const userMessageDiv = document.createElement('div');
-            userMessageDiv.classList.add('message', 'user-message');
-            userMessageDiv.innerText = userInput;
-            chatbox.appendChild(userMessageDiv);
+            const chatbox = document.getElementById('chatbox');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('message', 'user-message');
+            userMessageDiv.innerText = userInput;
+            chatbox.appendChild(userMessageDiv);
 
-            document.getElementById('userInput').value = '';
-            const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
-            const botMessageDiv = document.createElement('div');
-            botMessageDiv.classList.add('message', 'bot-message');
-            botMessageDiv.innerText = botResponse;
-            chatbox.appendChild(botMessageDiv);
-            chatbox.scrollTop = chatbox.scrollHeight;
-        });
+            document.getElementById('userInput').value = '';
+            const botResponse = predefinedResponses[userInput] || "I'm not sure about that. Try asking about courses, events, or rules.";
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('message', 'bot-message');
+            botMessageDiv.innerText = botResponse;
+            chatbox.appendChild(botMessageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        });
 
-        document.getElementById('userInput').addEventListener('keypress', (event) => {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
-                document.getElementById('sendButton').click();
-            }
-        });
+        document.getElementById('userInput').addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById('sendButton').click();
+            }
+        });
 
-        const scenarios = Object.keys(predefinedResponses);
-        const scenariosContainer = document.getElementById('scenarios');
-        scenarios.forEach((scenario, index) => {
-            const button = document.createElement('button');
-            button.classList.add('scenario-button');
-            button.innerText = `Scenario ${index + 1}`;
-            button.addEventListener('click', () => {
-                document.getElementById('userInput').value = scenario;
-            });
-            scenariosContainer.appendChild(button);
-        });
-    </script>
+        const scenarios = Object.keys(predefinedResponses);
+        const scenariosContainer = document.getElementById('scenarios');
+        scenarios.forEach((scenario, index) => {
+            const button = document.createElement('button');
+            button.classList.add('scenario-button');
+            button.innerText = `Scenario ${index + 1}`;
+            button.addEventListener('click', () => {
+                document.getElementById('userInput').value = scenario;
+            });
+            scenariosContainer.appendChild(button);
+        });
+    </script>
+    <script src="../static/session.js"></script>
 </body>
 </html>
