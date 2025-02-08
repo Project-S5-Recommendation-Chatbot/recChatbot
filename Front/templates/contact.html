@@ -9,10 +9,10 @@
 <body>
   <nav>
     <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/index.html">Home</a>
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/about.html">About</a>
-    <a href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/contact.html">Contact</a>
-    <a id="loginLink" href="https://htmlpreview.github.io/?https://github.com/Project-S5-Recommendation-Chatbot/recChatbot/blob/frontend/Front/templates/login.html">Login</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a id="loginLink" href="login.html">Login</a>
   </nav>
 
   <div class="container">
@@ -34,32 +34,6 @@
         <li><strong>Marketing:</strong> 098279674, <a href="mailto:ap_marketing@ufar.am">ap_marketing@ufar.am</a></li>
         <li><strong>IMA:</strong> 098279676, <a href="mailto:ap_ima@ufar.am">ap_ima@ufar.am</a></li>
       </ul>
-
-      <h3>Master's Degree</h3>
-      <ul>
-        <li><strong>Phone:</strong> 098279673, <a href="mailto:ap_master@ufar.am">ap_master@ufar.am</a></li>
-      </ul>
-    </section>
-
-    <section class="development-info">
-      <h2>Development and Corporate Relations Department</h2>
-      <h3>Career Center, Internships</h3>
-      <p><strong>Phone:</strong> 010289760, <a href="mailto:stage@ufar.am">stage@ufar.am</a></p>
-      
-      <h3>Accelerator 28</h3>
-      <p><strong>Phone:</strong> 010289760, <a href="mailto:acc28@ufar.am">acc28@ufar.am</a></p>
-      
-      <h3>Philanthropy</h3>
-      <p><strong>Phone:</strong> 010289760, <a href="mailto:donation@ufar.am">donation@ufar.am</a></p>
-    </section>
-
-    <section class="communication-info">
-      <h2>Communication and Public Relations</h2>
-      <h3>Press, Events</h3>
-      <p><strong>Phone:</strong> 010249647, <a href="mailto:comm-event@ufar.am">comm-event@ufar.am</a></p>
-      
-      <h3>General Inquiries</h3>
-      <p><strong>Phone:</strong> 010249647, <a href="mailto:info@ufar.am">info@ufar.am</a></p>
     </section>
   </div>
 
@@ -68,14 +42,15 @@
   </footer>
 
   <script>
-    // Update the login link if a user is stored in sessionStorage:
     const user = sessionStorage.getItem('user');
     if (user) {
         const loginLink = document.getElementById('loginLink');
         loginLink.textContent = user;
         loginLink.removeAttribute('href');
+        loginLink.style.cursor = 'default';
     }
   </script>
+
   <script src="../static/session.js"></script>
 
 </body>
