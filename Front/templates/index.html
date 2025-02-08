@@ -19,7 +19,6 @@
   <div class="container">
     <h1>Welcome, UFAR Student! 🎓</h1>
     <p>Ready to explore personalized recommendations just for you? 🚀</p>
-    <p>Our Recommendation Chatbot is here to offer tailored suggestions based on your unique preferences. Whether you're looking for courses, events, or campus activities, we've got the perfect fit for you!</p>
     <button onclick="window.location.href='chatbot.html'">
       Let's Chat and Explore!
     </button>
@@ -35,7 +34,8 @@
         const loginLink = document.getElementById('loginLink');
         loginLink.textContent = user;
         loginLink.removeAttribute('href');
-        loginLink.style.cursor = 'default';
+        loginLink.style.pointerEvents = 'none'; 
+        loginLink.style.opacity = '0.6';  
     }
   </script>
 
