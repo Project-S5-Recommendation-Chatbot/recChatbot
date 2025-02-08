@@ -36,9 +36,9 @@
   <script>
     const user = sessionStorage.getItem('user');
     if (user) {
-      const loginLink = document.getElementById('loginLink');
-      loginLink.textContent = user;
-      loginLink.href = '#';
+        const loginLink = document.getElementById('loginLink');
+        loginLink.textContent = user;
+        loginLink.removeAttribute('href');
     }
   </script>
   <script src="../static/session.js"></script>
