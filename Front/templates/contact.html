@@ -13,7 +13,6 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a id="loginLink" href="login.html">Login</a>
-    <button id="logoutButton" style="display: none;">Logout</button>
   </nav>
 
   <div class="container">
@@ -35,12 +34,11 @@
         <li><strong>Marketing:</strong> 098279674, <a href="mailto:ap_marketing@ufar.am">ap_marketing@ufar.am</a></li>
         <li><strong>IMA:</strong> 098279676, <a href="mailto:ap_ima@ufar.am">ap_ima@ufar.am</a></li>
       </ul>
-    </section>
 
-    <section class="communication-info">
-      <h2>Communication and Public Relations</h2>
-      <h3>General Inquiries</h3>
-      <p><strong>Phone:</strong> 010249647, <a href="mailto:info@ufar.am">info@ufar.am</a></p>
+      <h3>Master's Degree</h3>
+      <ul>
+        <li><strong>Phone:</strong> 098279673, <a href="mailto:ap_master@ufar.am">ap_master@ufar.am</a></li>
+      </ul>
     </section>
   </div>
 
@@ -48,21 +46,6 @@
     &copy; 2024 Recommendation Chatbot. All Rights Reserved.
   </footer>
 
-  <script>
-    const user = sessionStorage.getItem('user');
-    const loginLink = document.getElementById('loginLink');
-    const logoutButton = document.getElementById('logoutButton');
-
-    if (user) {
-        loginLink.textContent = user;
-        loginLink.removeAttribute('href');
-        logoutButton.style.display = 'inline-block';
-    }
-
-    logoutButton.addEventListener('click', () => {
-        sessionStorage.removeItem('user');
-        window.location.reload();
-    });
-  </script>
+  <script src="../static/session.js"></script>
 </body>
 </html>
