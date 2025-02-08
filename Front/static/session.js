@@ -1,30 +1,25 @@
+// document.addEventListener('DOMContentLoaded', () => {
+//     const user = sessionStorage.getItem('user');
+//     const loginLink = document.getElementById('loginLink');
+//     if (user && loginLink) {
+//         loginLink.textContent = user;
+//         loginLink.href = '#'; // Prevent navigation back to the login page.
+//     }
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
     const user = sessionStorage.getItem('user');
     const loginLink = document.getElementById('loginLink');
+
     if (user && loginLink) {
-        loginLink.textContent = user;
+        loginLink.textContent = `${user} (Logout)`;
         loginLink.href = '#'; // Prevent navigation back to the login page.
-    }
-});
-// document.addEventListener('DOMContentLoaded', function() {
-//     const loginLink = document.getElementById('loginLink');
-//     const user = sessionStorage.getItem('user');
 
-//     if (loginLink) {
-//         if (user) {
-//             loginLink.textContent = user + " - Logout";
-//             loginLink.href = 'javascript:void(0);'; // Prevent default link behavior
-//             loginLink.onclick = logout; // Assign logout function
-//         } else {
-//             loginLink.textContent = 'Login';
-//             loginLink.href = '#';
-//             loginLink.onclick = null; // Ensure no logout function is attached
-//         }
-//     }
-
-    function logout() {
-        sessionStorage.removeItem('user');
-        alert('Logged out successfully!');
-        window.location.href = 'https://htmlpreview.github.io/?https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/templates/index.html'; // Redirect to home page after logout
+        // Add logout functionality
+        loginLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            sessionStorage.removeItem('user');
+            window.location.reload(); // Refresh the page to reflect logout
+        });
     }
 });
