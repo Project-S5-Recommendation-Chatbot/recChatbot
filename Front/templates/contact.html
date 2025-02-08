@@ -17,24 +17,6 @@
 
   <div class="container">
     <h1>Contact Us</h1>
-    
-    <section class="contact-info">
-      <h2>Admissions and Preparatory Courses Department</h2>
-      <p><strong>Phone:</strong> +374 98279672</p>
-      <p><strong>Email:</strong> <a href="mailto:admission@ufar.am">admission@ufar.am</a>, <a href="mailto:cp@ufar.am">cp@ufar.am</a></p>
-    </section>
-
-    <section class="faculty-info">
-      <h2>Administrative Heads of Faculties</h2>
-      <h3>Bachelor's Degree</h3>
-      <ul>
-        <li><strong>Law:</strong> 098279671, <a href="mailto:ap_droit@ufar.am">ap_droit@ufar.am</a></li>
-        <li><strong>Management:</strong> 098279673, <a href="mailto:ap_gestion@ufar.am">ap_gestion@ufar.am</a></li>
-        <li><strong>Finance:</strong> 098279674, <a href="mailto:ap_finances@ufar.am">ap_finances@ufar.am</a></li>
-        <li><strong>Marketing:</strong> 098279674, <a href="mailto:ap_marketing@ufar.am">ap_marketing@ufar.am</a></li>
-        <li><strong>IMA:</strong> 098279676, <a href="mailto:ap_ima@ufar.am">ap_ima@ufar.am</a></li>
-      </ul>
-    </section>
   </div>
 
   <footer>
@@ -47,7 +29,8 @@
         const loginLink = document.getElementById('loginLink');
         loginLink.textContent = user;
         loginLink.removeAttribute('href');
-        loginLink.style.cursor = 'default';
+        loginLink.style.pointerEvents = 'none'; 
+        loginLink.style.opacity = '0.6';  
     }
   </script>
 
