@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function logout() {
         sessionStorage.removeItem('user');
         alert('Logged out successfully!');
-        window.location.href = 'https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/templates/index.html'; // Redirect to home page after logout
+        window.location.href = 'https://htmlpreview.github.io/?https://raw.githubusercontent.com/Project-S5-Recommendation-Chatbot/recChatbot/frontend/Front/templates/index.html'; // Redirect to home page after logout
     }
 });
