@@ -7,17 +7,14 @@
   <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav>
     <img src="../static/logo1.png" alt="UFAR Logo" class="ufar-logo">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a id="loginLink" href="login.html">Login</a>
-    <button id="logoutButton" style="display: none;">Logout</button>
   </nav>
 
-  <!-- Main Content -->
   <div class="container">
     <h1>Welcome, UFAR Student! 🎓</h1>
     <p>Ready to explore personalized recommendations just for you? 🚀</p>
@@ -27,26 +24,10 @@
     </button>
   </div>
 
-  <!-- Footer -->
   <footer>
     &copy; 2024 Recommendation Chatbot. All Rights Reserved.
   </footer>
 
-  <script>
-    const user = sessionStorage.getItem('user');
-    const loginLink = document.getElementById('loginLink');
-    const logoutButton = document.getElementById('logoutButton');
-
-    if (user) {
-        loginLink.textContent = user;
-        loginLink.removeAttribute('href');
-        logoutButton.style.display = 'inline-block';
-    }
-
-    logoutButton.addEventListener('click', () => {
-        sessionStorage.removeItem('user');
-        window.location.reload();
-    });
-  </script>
+  <script src="../static/session.js"></script>
 </body>
 </html>
